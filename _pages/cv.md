@@ -11,35 +11,28 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Electrical and Computer Engineering, Duke University, Pratt School of Engineering 2022
+  * Thesis: Robustness and Generalization Under Distribution Shifts. Advisor: Guillermo Sapiro
+* B.S. in Electrical Engineering, Universidad de la Republica, Faculty of Engineering, 2015
 
-Work experience
+Professional Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Amazon Web Services | Applied Scientist * 2022 - to date
+  Responsible AI team. Designed evaluation for AWS language and speech models used in service cards on robustness, safety, and fairness. Developed approaches to measure privacy leakage risks (membership inference attacks) on production models
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Apple | Machine Learning Research Intern * 2021
+  * Interned at the Machine Learning Research Group, working on extracting task-relevant state in Reinforcement Learning.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+
+* Intel AI | Software Graduate Intern * 2020
+  * Graduate internship in Deep Reinforcement Learning in Robotics.
+
   
-Skills
+Services and Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Reviewing: ACL, AISTATS, EMNLP, FAccT, ICLR, ICML, NeurIPS, AAAI
+* Teaching: teaching assistant for: Information Theory, graduate level (2019, Duke University), and Random Signals and Noise, graduate level (2018, Duke University)
+* Software: Python (Pytorch, Hugging Face, vLLM, )
 
 Publications
 ======
@@ -47,7 +40,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
@@ -61,4 +54,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
