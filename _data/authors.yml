@@ -6,7 +6,7 @@ Name Name:
   email       : "martin.a.bertran@gmail.com"
   bio         : "Applied scientist at AWS. My work spans fairness, privacy,
     information‑theoretic learning, and large‑scale LLM evaluation."
-  avatar      : "bio-photo-2.jpg"
+  avatar      : "/images/profile.jpg"
   twitter     : "name"
   googlescholar: "https://scholar.google.com/citations?user=1kki_voAAAAJ"
   github: 'MartinBertran'
