@@ -6,11 +6,11 @@ Reads from page.contact (preferred) and falls back to site/author fields.
 
 {% assign name     = C.name     | default: site.author.name | default: site.title %}
 {% assign tagline  = C.tagline  | default: "" %}
-<!-- {% assign location = C.location | default: site.author.location | default: "" %} -->
+{% assign location = C.location | default: site.author.location | default: "" %}
 {% assign email    = C.email    | default: site.email | default: site.author.email | default: "" %}
-<!-- {% assign phone    = C.phone    | default: "" %} -->
+{% assign phone    = C.phone    | default: "" %}
 {% assign website  = C.website  | default: site.url | default: "" %}
-<!-- {% assign github   = C.github   | default: site.github_username | default: site.author.github | default: "" %} -->
+{% assign github   = C.github   | default: site.github_username | default: site.author.github | default: "" %}
 {% assign linkedin = C.linkedin | default: site.linkedin_username | default: site.author.linkedin | default: "" %}
 {% assign scholar  = C.scholar  | default: site.author.googlescholar | default: "" %}
 {% if C.scholar_id and C.scholar_id != "" %}

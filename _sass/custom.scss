@@ -271,5 +271,20 @@
   .cv-head--bar .cv-head__name { font-size: 1.55rem; }
   .cv-bar { font-size: .90rem; gap: .2rem .7rem; }
   a { color: #000; text-decoration: none; }
-  a[href^="http"]:after { content: " (" attr(href) ")"; }
 }
+
+
+// @media print {
+//   .cv-head--bar .cv-head__name { font-size: 1.55rem; }
+//   .cv-bar { font-size: .90rem; gap: .2rem .7rem; }
+//   a { color: #000; text-decoration: none; }
+//   a[href^="http"]:after { content: " (" attr(href) ")"; }
+// }
+
+// @media print {
+//   .cv-offline a[href]:after,
+//   .cv-offline a[href^="http"]:after,
+//   .cv-offline a[href^="mailto:"]:after {
+//     content: none !important;
+//   }
+// }

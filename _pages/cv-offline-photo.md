@@ -4,8 +4,6 @@ title: ""
 permalink: /cv-offline-photo/
 author_profile: false
 classes: cv-offline
-
-
 contact:
   name: "Martin Bertran"
   tagline: "Applied Scientist — LLM Safety • Privacy • Uncertainty Quantification"
@@ -18,9 +16,6 @@ contact:
   scholar_id: "1kki_voAAAAJ"
   avatar: "/images/profile.jpg"
 ---
-
 {% include contact-strip-photo.html %}
-
-
 {% include cv_body.md %}
 {% include shortpub.md %}
