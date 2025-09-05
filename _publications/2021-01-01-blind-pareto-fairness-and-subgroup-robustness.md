@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://proceedings.mlr.press/v139/martinez21a.html"
 bibtexurl: "/files/bibtex/blind-pareto-fairness-and-subgroup-robustness.bib"
 citation: "Natalia L Martinez and Martin A Bertran and Afroditi Papadaki and Miguel Rodrigues and Guillermo Sapiro. “Blind Pareto Fairness and Subgroup Robustness.” International Conference on Machine Learning."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

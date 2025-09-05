@@ -1,0 +1,275 @@
+/* ===== Base header (used by BOTH offline CVs) ===== */
+.cv-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;      /* single row on desktops */
+}
+
+.cv-head__left { min-width: 0; }  /* let text wrap instead of pushing layout */
+.cv-head__list { list-style: none; margin: .35rem 0 0 0; padding: 0; }
+.cv-head__list li {
+  white-space: normal;      /* allow wrapping for long URLs/emails */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ===== Photo variant ONLY (contact left, image right) ===== */
+.cv-head--photo {
+  display: grid !important;
+  grid-template-columns: 1fr var(--avatar-size) !important;  /* left flexes, right is fixed */
+  align-items: center;
+  gap: 1rem;
+  --avatar-size: clamp(110px, 14vw, 160px) !important;       /* tune this to taste */
+}
+.cv-head--photo .cv-head__right { width: var(--avatar-size) !important; }
+.cv-head--photo .cv-head__avatar {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;     /* 9999px for a circle */
+  display: block;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+}
+
+/* Mobile: stack the header; photo shrinks */
+@media (max-width: 640px) {
+  .cv-head { flex-wrap: wrap; }                       /* plain header stacks cleanly */
+  .cv-head--photo { grid-template-columns: 1fr !important; }
+  .cv-head--photo .cv-head__right { width: 96px !important; }
+  .cv-head--photo .cv-head__avatar { aspect-ratio: 1/1; width: 96px; height: 96px; }
+}
+
+/* Print: slightly smaller avatar */
+@media print {
+  .cv-head--photo { --avatar-size: 120px !important; }
+}
+
+/* Force left-aligned contact text in both variants */
+.cv-head__left,
+.cv-head__right,
+.cv-head__list,
+.cv-head__list li {
+  text-align: left !important;
+}
+
+/* ===== Compact typography for offline CVs only ===== */
+.cv-offline .page__content {
+  /* Tunable “preset” for text + headings */
+  --cv-text: 0.95rem;     /* default body text */
+  --cv-h1:   1.70rem;     /* name/title size */
+  --cv-h2:   1.08rem;     /* section headers */
+  --cv-h3:   1.00rem;
+  --cv-lh:   1.35;        /* line height for body */
+  --cv-lh2:  1.28;        /* slightly tighter for lists/contact */
+}
+
+/* Body text + lists */
+.cv-offline .page__content p,
+.cv-offline .page__content li {
+  font-size: var(--cv-text);
+  line-height: var(--cv-lh);
+  margin: 0.2rem 0;                 /* tighter vertical rhythm */
+}
+
+/* Headings */
+.cv-offline .cv-head__name { font-size: var(--cv-h1); }
+.cv-offline h2 {
+  font-size: var(--cv-h2);
+  margin: 0.6rem 0 0.25rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid #ddd;
+}
+.cv-offline h3 { font-size: var(--cv-h3); margin: 0.4rem 0 0.2rem; }
+
+/* Lists & indentation */
+.cv-offline .page__content ul,
+.cv-offline .page__content ol { margin: 0.2rem 0 0.3rem; padding-left: 1.1rem; }
+
+/* Contact list specifically a bit tighter */
+.cv-offline .cv-head__list li { line-height: var(--cv-lh2); }
+
+/* Reduce some global paddings in the header area */
+.cv-offline .cv-head__rule { margin: 0 0 0.7rem 0; }
+
+/* Print: even more compact + slightly smaller margins */
+@media print {
+  @page { margin: 0.60in; }
+  .cv-offline .page__content {
+    --cv-text: 0.90rem;
+    --cv-h1:   1.60rem;
+    --cv-h2:   1.05rem;
+    --cv-h3:   0.98rem;
+    --cv-lh:   1.30;
+    --cv-lh2:  1.24;
+  }
+}
+
+
+/* ===== Compact layout for content inside the CV wrapper ===== */
+/* ===== Compact layout for content inside the CV wrapper ===== */
+.cv-compact {
+  /* tunable defaults for the whole body */
+  --cv-text: 0.95rem;
+  --cv-h1:   1.70rem;
+  --cv-h2:   1.08rem;
+  --cv-h3:   1.00rem;
+  --cv-lh:   1.35;   /* body line-height */
+  --cv-lh2:  1.28;   /* lists */
+
+  font-size: var(--cv-text);
+  line-height: var(--cv-lh);
+}
+
+.cv-compact p,
+.cv-compact li {
+  font-size: var(--cv-text);
+  line-height: var(--cv-lh);
+  margin: 0.2rem 0;                 /* tighter rhythm */
+}
+
+.cv-compact h2 {
+  font-size: var(--cv-h2);
+  margin: 0.6rem 0 0.25rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.cv-compact h3 {
+  font-size: var(--cv-h3);
+  margin: 0.4rem 0 0.2rem;
+}
+
+.cv-compact ul,
+.cv-compact ol {
+  margin: 0.2rem 0 0.3rem;
+  padding-left: 1.1rem;
+}
+
+.cv-compact li { line-height: var(--cv-lh2); }
+
+/* Tables (if any in your CV) */
+.cv-compact table { font-size: 0.95em; }
+.cv-compact th, .cv-compact td { padding: .2rem .4rem; }
+
+/* Print: shave margins and type size slightly */
+@media print {
+  @page { margin: 0.60in; }
+  .cv-compact {
+    --cv-text: 0.90rem;
+    --cv-h1:   1.60rem;
+    --cv-h2:   1.05rem;
+    --cv-h3:   0.98rem;
+    --cv-lh:   1.30;
+    --cv-lh2:  1.24;
+  }
+}
+
+
+/* ===== Compact type for pages using archive-compact layout ===== */
+/* Keep your existing cv-head / photo rules above; these are additive */
+.cv-compact p,
+.cv-compact li,
+.cv-compact dd,
+.cv-compact dt {
+  font-size: 0.95rem;  /* try 0.93–0.97 to taste */
+  line-height: 1.35;   /* slightly tighter than default */
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
+}
+
+/* Lists: keep indent, just trim vertical rhythm */
+.cv-compact ul,
+.cv-compact ol {
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  /* no padding tweaks → preserves previous look */
+}
+
+/* Tables (if any): tiny nudge without restyling */
+.cv-compact table { font-size: 0.95em; }
+.cv-compact th, .cv-compact td { padding: .2rem .4rem; }
+
+/* Print: slightly smaller text + tighter leading */
+@media print {
+  @page { margin: 0.60in; }
+  .cv-compact p,
+  .cv-compact li,
+  .cv-compact dd,
+  .cv-compact dt {
+    font-size: 0.90rem;
+    line-height: 1.30;
+  }
+}
+
+
+
+
+/* Smaller/tighter publication lines inside CV pages only */
+.cv-compact .cv-pubs {
+  margin: 0.3rem 0;
+  padding-left: 1.1rem;   /* keep your existing indent style */
+}
+
+.cv-compact .cv-pubs li {
+  font-size: 0.93rem;     /* ← tweak 0.90–0.96 to taste */
+  line-height: 1.30;      /* tighter leading */
+  margin: 0.12rem 0;      /* tighter vertical spacing between items */
+}
+
+/* Keep titles visually strong, venue/year subdued */
+.cv-compact .cv-pubs .pub-title { font-weight: 600; }
+.cv-compact .cv-pubs .pub-venue { opacity: 0.9; }
+.cv-compact .cv-pubs .pub-year  { opacity: 0.8; }
+
+/* ===== Offline no-photo contact bar ===== */
+.cv-head--bar {
+  display: block;
+  text-align: left;
+  margin-bottom: .6rem;
+}
+.cv-head--bar .cv-head__name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.65rem; /* compact but prominent */
+  line-height: 1.1;
+}
+.cv-head--bar .cv-head__tagline {
+  margin-top: .15rem;
+  opacity: .9;
+  font-size: 1rem;
+}
+
+/* Single-row contact bar with tiny icons */
+.cv-bar {
+  display: flex;
+  flex-wrap: wrap;             /* wrap if needed */
+  gap: .3rem .9rem;            /* row gap, column gap */
+  list-style: none;
+  padding: 0;
+  margin: .45rem 0 0;
+  font-size: .95rem;           /* slightly compact */
+  line-height: 1.35;
+}
+.cv-bar li {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  white-space: nowrap;
+  overflow-wrap: anywhere;
+}
+.cv-bar .ico {
+  width: 14px; height: 14px;
+  flex: 0 0 14px;
+  fill: currentColor;
+  opacity: .85;
+}
+
+@media print {
+  .cv-head--bar .cv-head__name { font-size: 1.55rem; }
+  .cv-bar { font-size: .90rem; gap: .2rem .7rem; }
+  a { color: #000; text-decoration: none; }
+  a[href^="http"]:after { content: " (" attr(href) ")"; }
+}

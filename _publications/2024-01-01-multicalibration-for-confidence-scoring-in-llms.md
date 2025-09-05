@@ -8,7 +8,8 @@ venue: "Proceedings of the 41st International Conference on Machine Learning."
 excerpt: ""
 paperurl: "https://arxiv.org/abs/2404.04689"
 bibtexurl: "/files/bibtex/multicalibration-for-confidence-scoring-in-llms.bib"
-citation: "Gianluca Detommaso and Martin Bertran and Riccardo Fogliato and Aaron Roth. “Multicalibration for Confidence Scoring in LLMs.” Proceedings of the 41st International Conference on Machine Learning. 2024.."
+citation: "Gianluca Detommaso and Martin Bertran and Riccardo Fogliato and Aaron Roth. “Multicalibration for Confidence Scoring in LLMs.” Proceedings of the 41st International Conference on Machine Learning. 2024."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

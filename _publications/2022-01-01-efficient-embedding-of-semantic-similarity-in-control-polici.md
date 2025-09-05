@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://arxiv.org/abs/2201.12300"
 bibtexurl: "/files/bibtex/efficient-embedding-of-semantic-similarity-in-control-polici.bib"
 citation: "Martin Bertran and Walter Talbott and Nitish Srivastava and Joshua Susskind. “Efficient Embedding of Semantic Similarity in Control Policies via Entangled Bisimulation.” arXiv preprint arXiv:2201.12300."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

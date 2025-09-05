@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "http://proceedings.mlr.press/v97/bertran19a.html"
 bibtexurl: "/files/bibtex/adversarially-learned-representations-for-information-obfusc.bib"
 citation: "Martin Bertran and Natalia Martinez and Afroditi Papadaki and Qiang Qiu and Miguel Rodrigues and Galen Reeves and Guillermo Sapiro. “Adversarially Learned Representations for Information Obfuscation and Inference.” International Conference on Machine Learning."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

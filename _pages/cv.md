@@ -9,6 +9,18 @@ redirect_from:
 
 {% include base_path %}
 
+{% include cv_body.md %}
+
+{% include pub.md %}
+
+
+<!-- Research Interests
+======
+* Model calibration and uncertianty quantification
+* Out of distribution model robustness
+* Model auditing for robustness, fairness and privacy
+
+
 Education
 ======
 * Ph.D in Electrical and Computer Engineering, Duke University, Pratt School of Engineering, 2022
@@ -38,7 +50,7 @@ Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 <!-- Talks
 ======

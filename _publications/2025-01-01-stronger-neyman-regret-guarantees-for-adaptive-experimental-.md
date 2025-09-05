@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://arxiv.org/abs/2502.17427"
 bibtexurl: "/files/bibtex/stronger-neyman-regret-guarantees-for-adaptive-experimental-.bib"
 citation: "Georgy Noarov and Riccardo Fogliato and Martin Bertran and Aaron Roth. “Stronger Neyman Regret Guarantees for Adaptive Experimental Design.” arXiv preprint arXiv:2502.17427."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

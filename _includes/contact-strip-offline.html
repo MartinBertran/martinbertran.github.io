@@ -1,0 +1,78 @@
+{% comment %}
+Compact offline contact strip (no photo).
+Name on top, then a single-row contact bar with small icons.
+Reads from page.contact (preferred) or falls back to site/author fields.
+{% endcomment %}
+{% assign C = page.contact | default: site.author %}
+
+{% assign name     = C.name     | default: site.author.name | default: site.title %}
+{% assign tagline  = C.tagline  | default: "" %}
+{% assign location = C.location | default: site.author.location | default: "" %}
+{% assign email    = C.email    | default: site.email | default: site.author.email | default: "" %}
+{% assign phone    = C.phone    | default: "" %}
+{% assign website  = C.website  | default: site.url | default: "" %}
+{% assign github   = C.github   | default: site.github_username | default: site.author.github | default: "" %}
+{% assign linkedin = C.linkedin | default: site.linkedin_username | default: site.author.linkedin | default: "" %}
+{% assign scholar  = C.scholar  | default: site.author.googlescholar | default: "" %}
+{% if C.scholar_id and C.scholar_id != "" %}
+  {% assign scholar = "https://scholar.google.com/citations?user=" | append: C.scholar_id %}
+{% endif %}
+
+{% assign clean_web = website | replace: "https://","" | replace:"http://","" | replace:"/","" %}
+
+<header class="cv-head cv-head--bar">
+  <h1 class="cv-head__name">{{ name }}</h1>
+  {% if tagline %}<div class="cv-head__tagline">{{ tagline }}</div>{% endif %}
+
+  <ul class="cv-bar">
+    {% if location %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+      {{ location }}
+    </li>
+    {% endif %}
+
+    {% if email %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h20v12H2z"/><path d="m2 6 10 7 10-7"/></svg>
+      <a href="mailto:{{ email }}">{{ email }}</a>
+    </li>
+    {% endif %}
+
+    {% if phone %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h4l2 5-3 2a16 16 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 4a2 2 0 0 1 2-2Z"/></svg>
+      {{ phone }}
+    </li>
+    {% endif %}
+
+    {% if clean_web != "" %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0c3 3 3 15 0 20m0-20C9 5 9 19 12 22M2 12h20M4 8h16M4 16h16"/></svg>
+      <a href="https://{{ clean_web }}">{{ clean_web }}</a>
+    </li>
+    {% endif %}
+
+    {% if github %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8-.8 2.7-1.2-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0C16.9 3.7 18 4 18 4c.6 1.7.2 3 .1 3.3.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.9.8 1 1.8 1 2.9v4.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+      <a href="https://github.com/{{ github }}">github.com/{{ github }}</a>
+    </li>
+    {% endif %}
+
+    {% if linkedin %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 8h2v13H3zm5 0h2v2a3 3 0 0 1 2.7-1.5C15.6 8.5 17 10 17 13v8h-2v-7c0-1.7-.6-2.6-1.9-2.6-1.4 0-2.1 1-2.1 2.6v7H9z"/></svg>
+      <a href="https://www.linkedin.com/in/{{ linkedin }}">linkedin.com/in/{{ linkedin }}</a>
+    </li>
+    {% endif %}
+
+    {% if scholar %}
+    <li>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 6-9 6-9-6 9-6Zm0 7 9 6-9 5-9-5 9-6Z"/></svg>
+      <a href="{{ scholar }}">Google Scholar</a>
+    </li>
+    {% endif %}
+  </ul>
+</header>
+<hr class="cv-head__rule" />

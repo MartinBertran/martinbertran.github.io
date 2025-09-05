@@ -1,0 +1,38 @@
+{% comment %}
+Plain contact strip (no photo): left-aligned block with name, tagline, contacts.
+Reads from page.contact (preferred) and falls back to site/author fields.
+{% endcomment %}
+{% assign C = page.contact | default: site.author %}
+
+{% assign name     = C.name     | default: site.author.name | default: site.title %}
+{% assign tagline  = C.tagline  | default: "" %}
+<!-- {% assign location = C.location | default: site.author.location | default: "" %} -->
+{% assign email    = C.email    | default: site.email | default: site.author.email | default: "" %}
+<!-- {% assign phone    = C.phone    | default: "" %} -->
+{% assign website  = C.website  | default: site.url | default: "" %}
+<!-- {% assign github   = C.github   | default: site.github_username | default: site.author.github | default: "" %} -->
+{% assign linkedin = C.linkedin | default: site.linkedin_username | default: site.author.linkedin | default: "" %}
+{% assign scholar  = C.scholar  | default: site.author.googlescholar | default: "" %}
+{% if C.scholar_id and C.scholar_id != "" %}
+  {% assign scholar = "https://scholar.google.com/citations?user=" | append: C.scholar_id %}
+{% endif %}
+
+<header class="cv-head cv-head--plain">
+  <div class="cv-head__left">
+    <h1 class="cv-head__name">{{ name }}</h1>
+    {% if tagline %}<div class="cv-head__tagline">{{ tagline }}</div>{% endif %}
+
+    <ul class="cv-head__list">
+      {% if location %}<li>{{ location }}</li>{% endif %}
+      {% if email %}<li><a href="mailto:{{ email }}">{{ email }}</a></li>{% endif %}
+      {% if phone %}<li>{{ phone }}</li>{% endif %}
+
+      {% assign clean_web = website | replace: "https://", "" | replace: "http://", "" | replace: "/", "" %}
+      {% if clean_web != "" %}<li><a href="https://{{ clean_web }}">{{ clean_web }}</a></li>{% endif %}
+      {% if github %}<li><a href="https://github.com/{{ github }}">github.com/{{ github }}</a></li>{% endif %}
+      {% if linkedin %}<li><a href="https://www.linkedin.com/in/{{ linkedin }}">linkedin.com/in/{{ linkedin }}</a></li>{% endif %}
+      {% if scholar %}<li><a href="{{ scholar }}">Google Scholar</a></li>{% endif %}
+    </ul>
+  </div>
+</header>
+<hr class="cv-head__rule" />

@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://arxiv.org/abs/1911.06935"
 bibtexurl: "/files/bibtex/fairness-with-minimal-harm-a-pareto-optimal-approach-for-hea.bib"
 citation: "Natalia Martinez and Martin Bertran and Guillermo Sapiro. “Fairness With Minimal Harm: A Pareto-Optimal Approach For Healthcare.” NeurIPS ML4H: Machine Learning for Health, 2019."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

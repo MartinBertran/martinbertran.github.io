@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://ieeexplore.ieee.org/abstract/document/8803109/"
 bibtexurl: "/files/bibtex/non-contact-photoplethysmogram-and-instantaneous-heart-rate-.bib"
 citation: "Natalia Martinez and Martin Bertran and Guillermo Sapiro and Hau-Tieng Wu. “Non-contact photoplethysmogram and instantaneous heart rate estimation from infrared face video.” 2019 IEEE International Conference on Image Processing (ICIP)."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

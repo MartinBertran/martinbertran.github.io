@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/01328d0767830e73a612f9073e9ff15f-Abstract-Conference.html"
 bibtexurl: "/files/bibtex/scalable-membership-inference-attacks-via-quantile-regressio.bib"
 citation: "Martin Bertran and Shuai Tang and Aaron Roth and Michael Kearns and Jamie H Morgenstern and Steven Z Wu. “Scalable membership inference attacks via quantile regression.” Advances in Neural Information Processing Systems."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

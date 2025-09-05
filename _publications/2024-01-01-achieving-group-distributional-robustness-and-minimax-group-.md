@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://proceedings.mlr.press/v238/martinez24a.html"
 bibtexurl: "/files/bibtex/achieving-group-distributional-robustness-and-minimax-group-.bib"
 citation: "Natalia L Martinez and Martin A Bertran and Guillermo Sapiro. “Achieving Group Distributional Robustness and Minimax Group Fairness with Interpolating Classifiers.” International Conference on Artificial Intelligence and Statistics."
+selected: true
 ---
 
 <!-- add abstract or notes here -->

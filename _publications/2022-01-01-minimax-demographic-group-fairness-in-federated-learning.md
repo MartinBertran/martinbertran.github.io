@@ -9,6 +9,7 @@ excerpt: ""
 paperurl: "https://dl.acm.org/doi/abs/10.1145/3531146.3533081"
 bibtexurl: "/files/bibtex/minimax-demographic-group-fairness-in-federated-learning.bib"
 citation: "Afroditi Papadaki and Natalia Martinez and Martin Bertran and Guillermo Sapiro and Miguel Rodrigues. “Minimax demographic group fairness in federated learning.” ."
+selected: true
 ---
 
 <!-- add abstract or notes here -->
