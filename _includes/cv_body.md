@@ -1,7 +1,7 @@
 
 Research Interests
 ======
-* Model calibration and uncertianty quantification
+* Model calibration and uncertainty quantification
 * Out of distribution model robustness
 * Model auditing for robustness, fairness and privacy
 
